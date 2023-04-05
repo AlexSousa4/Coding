@@ -1,0 +1,14 @@
+
+
+diferenças da versão 5 para versão 6
+
+principais 
+switch => Routes
+
+useHistory => useNavigate
+
+history => Navigate
+
+component => Element
+
+exact => não mais utilizado
