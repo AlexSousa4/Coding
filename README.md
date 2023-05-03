@@ -12,7 +12,7 @@ O projeto ainda está em desenvolvimento e as próximas atualizações serão vo
 - [x] Aulas de CSS
 - [x] Aulas de Git e GitHub
 - [x] Aulas de JavaScript
-- [ ] Aulas de Node.Js
+- [x] Aulas de Node.Js
 - [ ] Aulas de React Native
 
 
