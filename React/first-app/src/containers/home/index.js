@@ -1,13 +1,19 @@
-import React, { useState, useRef } from 'react'
-// import { useNavigate } from 'react-router-dom';
+import { useState, useRef } from 'react'
+import { useNavigate } from 'react-router';
+
 import axios from 'axios'
+
 import People from '../../Assets/people.svg'
 import Arrow from '../../Assets/arrow.svg'
-import { Container, H1, Image, ContainerItens, InputLabel, Input, Button }
+import H1 from '../../components/Title'
+import { Container, Image, InputLabel, Input}
   from "./styles";
+import ContainerItens from '../../components/ContainerItens';
+import Button from '../../components/Button';
 
 function App() {
   const [users, setUsers] = useState([]);
+  const navigate = useNavigate();
   const inputName = useRef();
   const inputAge = useRef();
   //primeira posição criar a variavel
@@ -16,18 +22,26 @@ function App() {
 
   async function addNewUser() {
     // TODA VEZ QUE FOR USAR O AWAIT, O ASYNC TEM QUE ESTAR JUNTO.
-    const { data: newUser } = await axios.post("http://localhost:3001/users", {
-      name: inputName.current.value,
-      age: inputAge.current.value,
-    });
-    setUsers([...users, newUser]);
+    try {
+      const { data: newUser } = await axios.post("http://localhost:3001/users", {
+        name: inputName.current.value,
+        age: inputAge.current.value,
+      });
+      setUsers([...users, newUser]);
+      navigate('/usuarios');
+    } catch (error) {
+      console.log(error);
+    }
   };
+
+
 
   return (
     <Container>
       <Image alt="logo-imagem" src={People} />
       <ContainerItens>
         <H1>Olá</H1>
+        
         <InputLabel>Nome</InputLabel>
         <Input ref={inputName} placeholder="Nome"></Input>
 
@@ -37,7 +51,6 @@ function App() {
         <Button onClick={addNewUser}>
           Cadastrar <img alt="seta" src={Arrow}></img>
         </Button>
-
 
       </ContainerItens>
 

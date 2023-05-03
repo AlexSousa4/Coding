@@ -1,39 +1,48 @@
-import React, { useState, useEffect } from 'react'
-import axios from 'axios'
-import Avatar from '../../Assets/Avatar.svg'
-import Arrow from '../../Assets/arrow.svg'
-import Trash from '../../Assets/trash.svg'
-import { Container, H1, Image, ContainerItens, Button, User }
+import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router';
+import axios from 'axios';
+import Avatar from '../../Assets/people.svg';
+import Arrow from '../../Assets/arrow.svg';
+import Trash from '../../Assets/trash.svg';
+import { Container, Image, User }
   from "./styles";
+import H1  from '../../components/Title';
+import ContainerItens from '../../components/ContainerItens';
+import Button from '../../components/Button';
+
 
 function Users() {
   const [users, setUsers] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     async function fetchUsers() {
-      const { data: newUsers } = await axios.get("http://localhost:3001/users")
-
-      setUsers(newUsers)
+      const { data: newUsers } = await axios.get("http://localhost:3001/users");
+      setUsers(newUsers);
     }
-    fetchUsers()
-  }, [])
-
+  
+    fetchUsers();
+  }, []);
 
 
   async function deleteUser(userId) {
     await axios.delete(`http://localhost:3001/users/${userId}`)
-    const newUsers = users.filter(user => user.id !== userId)
+    const newUsers = users.filter((user) => {
+      return user.id !== userId;
+    })
     setUsers(newUsers);
   }
 
+  function goBackPage() {
+    navigate("/");
+  }
 
   return (
     <Container>
       <Image alt="logo-imagem" src={Avatar} />
-      <ContainerItens>
+      <ContainerItens isBlur={true}>
         <H1>Usuários</H1>
 
-        <Button onClick={addNewUser}>Cadastrar <img alt="seta" src={Arrow}></img></Button>
         <ul>
           {users.map((user) => (
             <User key={user.id}>
@@ -45,7 +54,7 @@ function Users() {
           ))}
         </ul>
 
-        <Button>
+        <Button isBack={true} onClick={goBackPage}>
           <img alt="seta" src={Arrow}></img> Voltar
         </Button>
 

@@ -5,17 +5,14 @@ import Home from './containers/home';
 import Users from './containers/Users';
 
 function myRoutes() {
-
     return (
         <Router>
             <Routes>
-                <Route path="/" element={Home} />
-                <Route path="/usuarios" element={Users} />
+                <Route path="/" element={<Home />} />
+                <Route path="/usuarios" element={<Users />} />
             </Routes>
         </Router>
     );
-
-
 }
 
 export default myRoutes;
