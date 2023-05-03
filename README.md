@@ -22,7 +22,7 @@ O projeto ainda está em desenvolvimento e as próximas atualizações serão vo
   <tr>
     <td align="center">
       <a href="https://www.linkedin.com/in/alex-sousa-94101a21a/">
-        <img src="https://media-exp1.licdn.com/dms/image/D4D35AQFR_2a4DJRrsg/profile-framedphoto-shrink_400_400/0/1660060384753?e=1667916000&v=beta&t=Y7BVQAQprIrEGozdbLHPCbbeym1qZkMLwsYaK1ajvdk" width="150px;" alt="Foto de Alex Sousa no Linkedin"/><br>
+        <img src="https://media.licdn.com/dms/image/D4D35AQFR_2a4DJRrsg/profile-framedphoto-shrink_400_400/0/1660060384753?e=1683730800&v=beta&t=1ly4Pga2REYSapnmXLFxZG2z8yC2ydfGqs3xNU43-C8" width="150px;" alt="Foto de Alex Sousa no Linkedin"/><br>
         <sub>
           <b>Alex Sousa</b>
         </sub>
