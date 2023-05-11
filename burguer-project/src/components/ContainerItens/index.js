@@ -1,12 +1,12 @@
-// import React from "react";
+import React from "react";
 
-// import { ContainerItens as Container} from "./styles";
+import { ContainerItens as Container} from "./styles";
 
 
-// function ContainerItens ({children,isBlur}) {
+function ContainerItens ({children,isBlur}) {
 
-// return  <Container isBlur={isBlur}>{children}</Container>
+return  <Container isBlur={isBlur}>{children}</Container>
 
-// }
+}
 
-// export default ContainerItens
+export default ContainerItens
